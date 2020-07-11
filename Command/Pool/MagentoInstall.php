@@ -62,6 +62,7 @@ class MagentoInstall extends CommandAbstract
                 'core:setup:media',
                 'magento1:setup:configs',
                 'core:setup:db',
+                'core:setup:update-db-data',
                 'magento1:setup:dburls',
                 'magento1:setup:redis',
                 'core:setup:permissions'
