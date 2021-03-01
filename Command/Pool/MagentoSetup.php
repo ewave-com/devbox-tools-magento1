@@ -53,7 +53,7 @@ class MagentoSetup extends CommandAbstract
             $output
         );
 
-        $mPath = EnvConfig::getValue('WEBSITE_DOCUMENT_ROOT');
+        $mPath = EnvConfig::getValue('WEBSITE_APPLICATION_ROOT') ?: EnvConfig::getValue('WEBSITE_DOCUMENT_ROOT');
 
         $this->executeCommands(
             sprintf('cd %s && rm -rf var/* app/etc/local.xml', $mPath),

@@ -42,7 +42,7 @@ class MagentoSetupRedis extends CommandAbstract
         $io = new SymfonyStyle($input, $output);
         $this->commandTitle($io, 'Redis Configuration');
 
-        $mPath = EnvConfig::getValue('WEBSITE_DOCUMENT_ROOT');
+        $mPath = EnvConfig::getValue('WEBSITE_APPLICATION_ROOT') ?: EnvConfig::getValue('WEBSITE_DOCUMENT_ROOT');
         $destinationMagentoPath = $mPath . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'etc';
         if (!$destinationMagentoPath) {
             $destinationMagentoPath = $this->requestOption(MagentoOptions::PATH, $input, $output, true);
@@ -259,7 +259,7 @@ class MagentoSetupRedis extends CommandAbstract
             ],
         ];
         $rootNode = 'config';
-        $mPath = EnvConfig::getValue('WEBSITE_DOCUMENT_ROOT');
+        $mPath = EnvConfig::getValue('WEBSITE_APPLICATION_ROOT') ?: EnvConfig::getValue('WEBSITE_DOCUMENT_ROOT');
         $destinationMagentoPath = $mPath . DIRECTORY_SEPARATOR . 'app'
             . DIRECTORY_SEPARATOR . 'etc' . DIRECTORY_SEPARATOR . 'modules';
 
